@@ -1,0 +1,8 @@
+{
+	"type":"module",
+	"dependencies": {
+		"sequelize": "^6.37.7",
+		"sqlite3": "^5.1.7",
+		"express": "^5.1.0"
+	}
+}
