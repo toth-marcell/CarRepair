@@ -3,6 +3,7 @@ import { CarModel, Customer, Job } from "./models.js";
 
 const app = express();
 app.use(express.json());
+app.use(express.static("public"));
 
 app.get("/customer", async (req, res) => {
   res.json(await Customer.findAll());
