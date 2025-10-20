@@ -1,8 +1,11 @@
 {
-	"type":"module",
-	"dependencies": {
-		"sequelize": "^6.37.7",
-		"sqlite3": "^5.1.7",
-		"express": "^5.1.0"
-	}
+  "type": "module",
+  "dependencies": {
+    "express": "^5.1.0",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.1.0"
+  }
 }
