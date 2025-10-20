@@ -59,10 +59,10 @@ export const Job = sequelize.define("Job", {
   },
 });
 
-Job.belongsTo(Customer);
-Customer.hasHook(Job);
+Job.belongsTo(Customer, { onDelete: "RESTRICT" });
+Customer.hasHook(Job, { onDelete: "RESTRICT" });
 
-Job.belongsTo(CarModel);
-CarModel.hasMany(Job);
+Job.belongsTo(CarModel, { onDelete: "RESTRICT" });
+CarModel.hasMany(Job, { onDelete: "RESTRICT" });
 
 await sequelize.sync();

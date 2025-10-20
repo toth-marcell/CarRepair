@@ -23,14 +23,14 @@ function deleteButton(parent, path, id) {
   button.addEventListener("click", () => {
     fetch("/" + path + "/" + id, {
       method: "DELETE",
-    })
-      .then((r) => r.json())
-      .then((data) => {
-        alert(data.msg);
+    }).then(async (result) => {
+      alert((await result.json()).msg);
+      if (result.ok) {
         getCustomers();
         getCarModels();
         getJobs();
-      });
+      }
+    });
   });
   parent.appendChild(button);
 }

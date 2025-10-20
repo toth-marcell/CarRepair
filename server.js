@@ -20,7 +20,13 @@ app.post("/customer", async (req, res) => {
 app.delete("/customer/:id", async (req, res) => {
   const customer = await Customer.findByPk(req.params.id);
   if (!customer) return res.status(404).json({ msg: "No such customer!" });
-  await customer.destroy();
+  try {
+    await customer.destroy();
+  } catch {
+    return res.status(400).json({
+      msg: "This customer cannot be deleted because they have jobs in the database!",
+    });
+  }
   res.json({ msg: "Success!" });
 });
 
@@ -39,7 +45,13 @@ app.post("/carmodel", async (req, res) => {
 app.delete("/carmodel/:id", async (req, res) => {
   const carmodel = await CarModel.findByPk(req.params.id);
   if (!carmodel) return res.status(404).json({ msg: "No such car model!" });
-  await carmodel.destroy();
+  try {
+    await carmodel.destroy();
+  } catch {
+    return res.status(400).json({
+      msg: "This car model cannot be deleted because it is referenced by jobs in the database!",
+    });
+  }
   res.json({ msg: "Success!" });
 });
 
