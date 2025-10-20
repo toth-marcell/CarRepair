@@ -1,3 +1,21 @@
+if (!localStorage.getItem("tab")) localStorage.setItem("tab", 0);
+else
+  bootstrap.Tab.getOrCreateInstance(
+    document.querySelector(
+      `button[data-tab-number="${localStorage.getItem("tab")}"`
+    )
+  ).show();
+const tabs = document.querySelectorAll('button[data-bs-toggle="tab"]');
+tabs.forEach((tab) => {
+  tab.addEventListener("shown.bs.tab", (e) => {
+    localStorage.setItem("tab", e.target.dataset.tabNumber);
+  });
+});
+
+getCustomers();
+getCarModels();
+getJobs();
+
 function deleteButton(parent, path, id) {
   const button = document.createElement("button");
   button.classList.add("btn", "btn-danger");
@@ -127,7 +145,3 @@ function getJobs() {
       }
     });
 }
-
-getCustomers();
-getCarModels();
-getJobs();

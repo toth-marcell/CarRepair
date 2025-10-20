@@ -15,15 +15,21 @@
   <ul class="nav nav-pills" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="customer-tab" data-bs-toggle="tab" data-bs-target="#customers-tab-pane"
-        type="button" role="tab" aria-controls="customers-tab-pane" aria-selected="true">Customers</button>
+        type="button" role="tab" aria-controls="customers-tab-pane" aria-selected="true" data-tab-number="0">
+        Customers
+      </button>
     </li>
     <li class="nav-item" role="presentation">
       <button class="nav-link" id="carmodels-tab" data-bs-toggle="tab" data-bs-target="#carmodels-tab-pane"
-        type="button" role="tab" aria-controls="carmodels-tab-pane" aria-selected="false">Car models</button>
+        type="button" role="tab" aria-controls="carmodels-tab-pane" aria-selected="false" data-tab-number="1">
+        Car models
+      </button>
     </li>
     <li class="nav-item" role="presentation">
       <button class="nav-link" id="jobs-tab" data-bs-toggle="tab" data-bs-target="#jobs-tab-pane" type="button"
-        role="tab" aria-controls="jobs-tab-pane" aria-selected="false">Jobs</button>
+        role="tab" aria-controls="jobs-tab-pane" aria-selected="false" data-tab-number="2">
+        Jobs
+      </button>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
@@ -63,7 +69,7 @@
             Phone
             <input type="tel" name="phone" class="form-control">
           </label>
-          <button class="form-control btn btn-primary">Add new</button>
+          <button class="form-control btn btn-primary" type="submit">Add new</button>
         </form>
       </div>
     </div>
@@ -103,7 +109,7 @@
             Type
             <input type="tel" name="type" class="form-control">
           </label>
-          <button class="form-control btn btn-primary">Add new</button>
+          <button class="form-control btn btn-primary" type="submit">Add new</button>
         </form>
       </div>
     </div>
@@ -152,7 +158,7 @@
             Car model id
             <input type="number" name="CarModelId" class="form-control">
           </label>
-          <button class="form-control btn btn-primary">Add new</button>
+          <button class="form-control btn btn-primary" type="submit">Add new</button>
         </form>
       </div>
     </div>
